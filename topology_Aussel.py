@@ -2,8 +2,12 @@
 # -*- coding: utf-8 -*-
 
 from brian2 import *
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import *
 from mpl_toolkits.mplot3d import Axes3D
-
+import datetime
 
 def topology(N1,N2,N3,p_CAN):
     
@@ -163,7 +167,9 @@ def topology(N1,N2,N3,p_CAN):
     
     plot(elec_array[:144,0],elec_array[:144,1],elec_array[:144,2],'yo') 
     plot(elec_array[144:,0],elec_array[144:,1],elec_array[144:,2],'yo')
-    
+
+    uniq_filename = str(datetime.datetime.now().date()) + '_' + str(datetime.datetime.now().time()).replace(':', '.')
+    savefig('3D_'+uniq_filename+'.png')
 
  
 #Black and white 2D figure od the network
@@ -204,7 +210,8 @@ def topology(N1,N2,N3,p_CAN):
     
     xlim([-40,40])
     ylim([-60,20])
-
+    uniq_filename = str(datetime.datetime.now().date()) + '_' + str(datetime.datetime.now().time()).replace(':', '.')
+    savefig('BW2D_'+uniq_filename+'.png')
     
     return(CA1_py,CA1_py_end,CA1_py_inh,CA1_pyCAN,CA1_pyCAN_end,CA1_pyCAN_inh,CA1_inh,CA3_py,CA3_py_end,CA3_py_inh,CA3_pyCAN,CA3_pyCAN_end,CA3_pyCAN_inh,CA3_inh,DG_py,DG_py_end,DG_py_inh,DG_inh,EC_py,EC_py_end,EC_py_inh,EC_pyCAN,EC_pyCAN_end,EC_pyCAN_inh,EC_inh, elec) 
     

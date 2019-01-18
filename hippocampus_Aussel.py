@@ -13,6 +13,10 @@ from brian2 import *
 
 from topology_Aussel import topology
 from Event_detection_Aussel import event_detection_and_analysis
+import matplotlib
+matplotlib.use('Agg')
+from matplotlib.pyplot import *
+
 import scipy        
 from scipy import signal
 import ast

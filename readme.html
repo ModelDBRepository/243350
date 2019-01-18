@@ -5,5 +5,22 @@
 </p>
 <p>These models were contributed by A. Aussel. The python scripts require the freely available brian2 package:
 <a href="https://brian2.readthedocs.io/en/stable/index.html">https://brian2.readthedocs.io/en/stable/index.html</a></p>
-
+The model also requires at least python version 3.6.  In addition EEG data files must be
+supplied (unfortunately the ones used for the paper are not allowed to be released).  See the hippocampus_Aussel.py around line 505 for filenames. The sampling rate was 1024 Hz. </p>
+To run on a linux cluster you may need to execute commands like (if when you
+try running the python script it reports missing requirements, add those names to the pip3 command like the examples below:</p>
+module load Python/3.6<br/>
+pip3 install --user --upgrade pip<br/>
+pip3 install --user brian2<br/>
+pip3 install --user matplotlib<br/>
+python3 -i hippocampus_Aussel.py<p/>
+Then type into the python prompt:<p/>
+main_process([0], 60*psiemens,600*psiemens,0.1,0.06)<br/>
+<p/>
+Although the simulation will stop when it needs the real data for stimulation it
+will generate these graphs:<p/>
+<img src="./screenshot1.png" alt="screenshot 1" width="650">
+<p/>
+<img src="./screenshot2.png" alt="screenshot 2" width="650">
+<p/>
 </html>
