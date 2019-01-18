@@ -12,7 +12,7 @@ import brian2
 from brian2 import * 
 
 from topology_Aussel import topology
-from Event_detection_2 import event_detection_and_analysis
+from Event_detection_Aussel import event_detection_and_analysis
 import scipy        
 from scipy import signal
 import ast
